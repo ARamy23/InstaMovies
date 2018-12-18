@@ -16,21 +16,29 @@ class AddNewMovieViewModel: BaseViewModel {
     var movieOverview: Dynamic<String> = Dynamic("")
     var date: Dynamic<String> = Dynamic("")
     
-    func save() {
+    func save(isSuccess: @escaping (Bool) -> Void) {
         AddNewMovieInteractor(movieTitle.value ?? "No Title Set", overview: movieOverview.value, date: date.value ?? "No Date", posterImage: moviePoster.value)
             .save { [weak self] (model, error) in
-                guard let self = self else { return }
+                guard let self = self else {
+                    isSuccess(false)
+                    return
+                }
+                
                 guard error == nil else {
                     print(error!)
                     self.router.alert(title: "Error", message: error!.localizedDescription, actions: [(title: "Ok", style: .default, handler: nil)])
+                    isSuccess(false)
                     return
                 }
+                
                 guard let movie = model as? Movie else {
                     self.router.alert(title: "Error", message: "Oops, Something went wrong", actions: [(title: "Ok", style: .default, handler: nil)])
+                    isSuccess(false)
                     return
                 }
                 
                 self.usersMovies.value?.append(movie)
+                isSuccess(true)
         }
     }
 }
