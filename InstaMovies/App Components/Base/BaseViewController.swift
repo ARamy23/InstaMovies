@@ -8,24 +8,9 @@
 
 import UIKit
 
-enum BaseViewState {
-    case loading
-    case failed
-    case fetchedData
-}
-
 class BaseViewController: UIViewController {
     
     var router = Router()
-    
-    var viewState: BaseViewState = .loading {
-        didSet {
-            switch viewState {
-            case .loading: self.view.activityStartAnimating()
-            default: self.view.activityStopAnimating()
-            }
-        }
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

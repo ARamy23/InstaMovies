@@ -8,11 +8,24 @@
 
 import Foundation
 
+enum BaseViewState {
+    case loading
+    case failed
+    case fetchedData
+}
+
 class BaseViewModel {
     var router: RouterProtocol
     
     var interactor: BaseInteractor
-    var viewState: BaseViewState = .loading
+    var viewState: Dynamic<BaseViewState> = Dynamic(.loading) {
+        didSet {
+            switch viewState.value {
+            case .loading?: router.presentedVC.view.activityStartAnimating()
+            default: router.presentedVC.view.activityStopAnimating()
+            }
+        }
+    }
     
     init(router: RouterProtocol, service: BaseService.Type) {
         self.router = router

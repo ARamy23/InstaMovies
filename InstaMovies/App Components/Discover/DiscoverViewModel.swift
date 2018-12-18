@@ -14,6 +14,7 @@ class DiscoverViewModel: BaseViewModel {
     var totalPages: Dynamic<Int?> = Dynamic(0)
     var totalResults: Dynamic<Int?> = Dynamic(0)
     var page: Dynamic<Int> = Dynamic(1)
+    
     func fetchMovies() {
         DiscoverInteractor(page.value ?? 1).performARequest { [weak self] (model, error) in
             guard let self = self else { return }
@@ -21,6 +22,7 @@ class DiscoverViewModel: BaseViewModel {
             guard error == nil else {
                 print("we've got an error here!")
                 print(error ?? "nil error value")
+                self.viewState = Dynamic<BaseViewState>(.failed)
                 self.router.alert(title: "Error", message: error?.localizedDescription ?? "Oops something went wrong!", actions: [("ok", .default, nil)])
                 return
             }
@@ -30,14 +32,14 @@ class DiscoverViewModel: BaseViewModel {
                 let movies = discoveryMoviesResponses.movies else {
                     print("Parsing probably failed")
                     self.router.alert(title: "Error", message: "Oops something went wrong!", actions: [("ok", .default, nil)])
-                    self.viewState = .failed
+                    self.viewState = Dynamic<BaseViewState>(.failed)
                     return
             }
             
-            self.viewState = .fetchedData
-            self.allMovies = Dynamic<[Movie]>(movies)
-            self.totalPages = Dynamic<Int?>(discoveryMoviesResponses.totalPages)
-            self.totalResults = Dynamic<Int?>(discoveryMoviesResponses.totalResults)
+            self.viewState.value = .fetchedData
+            self.allMovies.value = movies
+            self.totalPages.value = discoveryMoviesResponses.totalPages
+            self.totalResults.value = discoveryMoviesResponses.totalResults
         }
     }
 }
