@@ -33,6 +33,8 @@ class DiscoverViewController: BaseViewController {
         super.initialize()
         setupUI()
         discoverViewModel.fetchMovies()
+        discoverViewModel.router = self.router
+        addNewMovieViewModel.router = self.router
     }
     
     @objc fileprivate func addNewMovie() {

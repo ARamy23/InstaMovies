@@ -53,6 +53,7 @@
 		E2D7665421C96ACC001E8177 /* AddNewMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7665221C96ACC001E8177 /* AddNewMovieViewController.swift */; };
 		E2D7665521C96ACC001E8177 /* AddNewMovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D7665321C96ACC001E8177 /* AddNewMovieViewController.xib */; };
 		E2D7665821C97978001E8177 /* isEmptyValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7665721C97978001E8177 /* isEmptyValidator.swift */; };
+		E2D7665A21C98DDE001E8177 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7665921C98DDE001E8177 /* KeyboardLayoutConstraint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		E2D7665221C96ACC001E8177 /* AddNewMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMovieViewController.swift; sourceTree = "<group>"; };
 		E2D7665321C96ACC001E8177 /* AddNewMovieViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewMovieViewController.xib; sourceTree = "<group>"; };
 		E2D7665721C97978001E8177 /* isEmptyValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isEmptyValidator.swift; sourceTree = "<group>"; };
+		E2D7665921C98DDE001E8177 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +282,7 @@
 		E2ADC27A21C69D2A00719490 /* Shared Components */ = {
 			isa = PBXGroup;
 			children = (
+				E2D7665B21C98DE4001E8177 /* Utils */,
 				E2D7664F21C96307001E8177 /* CustomViews */,
 				E2ADC2B721C6C62B00719490 /* Keys */,
 				E2ADC29421C6A40900719490 /* Externals */,
@@ -440,6 +443,14 @@
 			children = (
 			);
 			path = Validators;
+			sourceTree = "<group>";
+		};
+		E2D7665B21C98DE4001E8177 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E2D7665921C98DDE001E8177 /* KeyboardLayoutConstraint.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -603,6 +614,7 @@
 				E2ADC29621C6A58700719490 /* Router.swift in Sources */,
 				E2ADC28E21C6A32100719490 /* Router Protocol.swift in Sources */,
 				E2ADC20821C698AE00719490 /* AppDelegate.swift in Sources */,
+				E2D7665A21C98DDE001E8177 /* KeyboardLayoutConstraint.swift in Sources */,
 				E2ADC28321C69F1F00719490 /* NibNameProtocol.swift in Sources */,
 				E2D7664B21C95DBE001E8177 /* AddNewMovieInteractor.swift in Sources */,
 				E2ADC2B621C6C20000719490 /* DiscoverService.swift in Sources */,

@@ -22,6 +22,12 @@ class AddNewMovieViewController: BaseViewController {
     override func initialize() {
         super.initialize()
         overviewTextView.delegate = self
+        viewModel.router = self.router
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.view.endEditing(true)
     }
     
     @IBAction func chooseAPosterImage(_ sender: Any) {
@@ -47,10 +53,15 @@ class AddNewMovieViewController: BaseViewController {
     @IBAction func saveMovie(_ sender: Any) {
         viewModel.movieTitle.value = movieTitleTextField.text
         viewModel.movieOverview.value = overviewTextView.text
-        viewModel.date.value = "\(datePicker.date)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dateString = dateFormatter.string(from: datePicker.date)
+        viewModel.date.value = "\(dateString)"
         viewModel.moviePoster.value = posterImageView.image
-        viewModel.save()
-        self.dismiss(animated: true, completion: nil)
+        viewModel.save { (hasSavedSuccessfully) in
+            if hasSavedSuccessfully { self.dismiss(animated: true, completion: nil) }
+        }
+        
     }
     
     @IBAction func dismiss(_ sender: Any) {
