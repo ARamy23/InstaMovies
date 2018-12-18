@@ -24,4 +24,9 @@ class MovieCell: UITableViewCell {
             movieReleaseDateLabel.text = movie?.releaseDate
         }
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        posterImageView.image = #imageLiteral(resourceName: "discover")
+    }
 }
