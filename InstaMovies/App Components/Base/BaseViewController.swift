@@ -16,9 +16,6 @@ enum BaseViewState {
 
 class BaseViewController: UIViewController {
     
-    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
-    var greyView: UIView = UIView(frame: .zero)
-    
     var router = Router()
     
     var viewState: BaseViewState = .loading {
@@ -33,31 +30,16 @@ class BaseViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // add default willAppear Logic here
-        
+        initialize()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // add default viewDidLoad logic here
         router.presentedVC = self
-        initialize()
+        bind()
     }
     
+    func bind() {}
     func initialize() {}
-    
-    func performARequest<T: BaseService>(from service: T.Type, onComplete: @escaping (CodableInit?, Error?) -> Void) {
-        do {
-            try toValidate()
-            request(from: service, onComplete: onComplete)
-        } catch let error {
-            viewState = .failed
-            router.alert(title: "Error", message: error.localizedDescription, actions: [("ok", .default, nil)])
-        }
-    }
-    
-    @objc func toValidate() throws {
-        try ToSeeIfIsReachable().orThrow()
-    }
-    
-    func request<T: BaseService>(from service: T.Type, onComplete: @escaping (CodableInit?, Error?) -> Void) {}
 }

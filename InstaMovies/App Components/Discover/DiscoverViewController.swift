@@ -14,44 +14,41 @@ class DiscoverViewController: BaseViewController {
     
     var allMovies = [Movie]() {
         didSet {
+            viewModel.allMovies.value = self.allMovies
             discoveryFeedTableView.reloadData()
         }
     }
     var usersMovies = [Movie]() {
         didSet {
+            viewModel.usersMovies.value = self.usersMovies
             discoveryFeedTableView.reloadData()
         }
     }
-    var page: Int = 1
-    var totalPages: Int?
-    var totalResults: Int?
-    
-    fileprivate func fetchMovies() {
-        performARequest(from: DiscoverService.self) { [weak self] (model, error) in
-            
-            guard let self = self else { return }
-            
-            guard error == nil else {
-                print("We got an error here")
-                print(error ?? "nil error value")
-                self.router.alert(title: "Error", message: error?.localizedDescription ?? "Oops something went wrong!", actions: [("ok", .default, nil)])
-                self.viewState = .failed
-                return
-            }
-            
-            guard let discoveryMoviesResponses = model as? MoviesDiscoveryResponse,
-                let movies = discoveryMoviesResponses.movies else {
-                    print("Parsing probably have failed")
-                    self.router.alert(title: "Error", message: "Oops something went wrong!", actions: [("ok", .default, nil)])
-                    self.viewState = .failed
-                    return
-            }
-            
-            self.viewState = .fetchedData
-            self.allMovies = movies
-            self.totalPages = discoveryMoviesResponses.totalPages
-            self.totalResults = discoveryMoviesResponses.totalResults
+    var page: Int = 1 {
+        didSet {
+            viewModel.page.value = self.page
         }
+    }
+    var totalPages: Int? {
+        didSet {
+            viewModel.totalPages.value = totalPages
+        }
+    }
+    var totalResults: Int? {
+        didSet {
+            viewModel.totalResults.value = totalResults
+        }
+    }
+    
+    var viewModel: DiscoverViewModel!
+    
+    override func bind() {
+        viewModel = DiscoverViewModel(router: router, service: DiscoverService.self)
+        viewModel.allMovies.bind = { [unowned self] in self.allMovies = $0 }
+        viewModel.usersMovies.bind = { [unowned self] in self.usersMovies = $0 }
+        viewModel.page.bind = { [unowned self] in self.page = $0 }
+        viewModel.totalPages.bind = { [unowned self] in self.totalPages = $0 }
+        viewModel.totalResults.bind = { [unowned self] in self.totalResults = $0 }
     }
     
     fileprivate func setupUI() {
@@ -65,22 +62,7 @@ class DiscoverViewController: BaseViewController {
     override func initialize() {
         super.initialize()
         setupUI()
-        fetchMovies()
-    }
-    
-    override func request<T: BaseService>(from service: T.Type, onComplete: @escaping (CodableInit?, Error?) -> Void) {
-        super.request(from: service, onComplete: onComplete)
-        
-        guard let discoverService = service as? DiscoverService.Type else { return }
-        
-        discoverService.init(.discoverMovies(page: page)).send(MoviesDiscoveryResponse.self) { (response) in
-            switch response {
-            case .success(let value):
-                onComplete(value, nil)
-            case .failure(let error):
-                onComplete(nil, error)
-            }
-        }
+        viewModel.fetchMovies()
     }
 }
 
