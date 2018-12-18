@@ -12,50 +12,15 @@ class DiscoverViewController: BaseViewController {
     
     @IBOutlet private weak var discoveryFeedTableView: UITableView!
     
-    var allMovies = [Movie]() {
-        didSet {
-            discoveryFeedTableView.reloadData()
-        }
-    }
-    var usersMovies = [Movie]() {
-        didSet {
-            discoveryFeedTableView.reloadData()
-        }
-    }
-    var page: Int = 1
-    var totalPages: Int?
-    var totalResults: Int?
+    var viewModel: DiscoverViewModel!
     
-    fileprivate func fetchMovies() {
-        performARequest(from: DiscoverService.self) { [weak self] (model, error) in
-            
-            guard let self = self else { return }
-            
-            guard error == nil else {
-                print("We got an error here")
-                print(error ?? "nil error value")
-                self.router.alert(title: "Error", message: error?.localizedDescription ?? "Oops something went wrong!", actions: [("ok", .default, nil)])
-                self.viewState = .failed
-                return
-            }
-            
-            guard let discoveryMoviesResponses = model as? MoviesDiscoveryResponse,
-                let movies = discoveryMoviesResponses.movies else {
-                    print("Parsing probably have failed")
-                    self.router.alert(title: "Error", message: "Oops something went wrong!", actions: [("ok", .default, nil)])
-                    self.viewState = .failed
-                    return
-            }
-            
-            self.viewState = .fetchedData
-            self.allMovies = movies
-            self.totalPages = discoveryMoviesResponses.totalPages
-            self.totalResults = discoveryMoviesResponses.totalResults
-        }
+    override func bind() {
+        viewModel = DiscoverViewModel(router: router, service: DiscoverService.self)
+        viewModel.allMovies.bind = { [unowned self] _ in self.discoveryFeedTableView.reloadData() }
+        viewModel.usersMovies.bind = { [unowned self] _ in self.discoveryFeedTableView.reloadData() }
     }
     
     fileprivate func setupUI() {
-        viewState = .loading
         discoveryFeedTableView.dataSource = self
         discoveryFeedTableView.delegate = self
         
@@ -65,22 +30,7 @@ class DiscoverViewController: BaseViewController {
     override func initialize() {
         super.initialize()
         setupUI()
-        fetchMovies()
-    }
-    
-    override func request<T: BaseService>(from service: T.Type, onComplete: @escaping (CodableInit?, Error?) -> Void) {
-        super.request(from: service, onComplete: onComplete)
-        
-        guard let discoverService = service as? DiscoverService.Type else { return }
-        
-        discoverService.init(.discoverMovies(page: page)).send(MoviesDiscoveryResponse.self) { (response) in
-            switch response {
-            case .success(let value):
-                onComplete(value, nil)
-            case .failure(let error):
-                onComplete(nil, error)
-            }
-        }
+        viewModel.fetchMovies()
     }
 }
 
@@ -105,9 +55,9 @@ extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return usersMovies.count
+            return viewModel.usersMovies.value?.count ?? 0
         case 1:
-            return allMovies.count
+            return viewModel.allMovies.value?.count ?? 0
         default:
             return 0
         }
@@ -115,7 +65,7 @@ extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieCell.reuseIdentifier, for: indexPath) as? MovieCell else { return UITableViewCell() }
-        let movie = (indexPath.section == 1) ? allMovies[indexPath.row] : usersMovies[indexPath.row]
+        let movie = (indexPath.section == 1) ? viewModel.allMovies.value?[indexPath.row] : viewModel.usersMovies.value?[indexPath.row]
         cell.movie = movie
         return cell
     }
