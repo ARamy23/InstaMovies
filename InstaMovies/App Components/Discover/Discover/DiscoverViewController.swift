@@ -12,24 +12,33 @@ class DiscoverViewController: BaseViewController {
     
     @IBOutlet private weak var discoveryFeedTableView: UITableView!
     
-    var viewModel: DiscoverViewModel!
+    var discoverViewModel: DiscoverViewModel!
+    var addNewMovieViewModel: AddNewMovieViewModel!
     
     override func bind() {
-        viewModel = DiscoverViewModel(router: router, service: DiscoverService.self)
-        viewModel.allMovies.bind = { [unowned self] _ in self.discoveryFeedTableView.reloadData() }
-        viewModel.usersMovies.bind = { [unowned self] _ in self.discoveryFeedTableView.reloadData() }
+        discoverViewModel = DiscoverViewModel(router: router, service: DiscoverService.self)
+        addNewMovieViewModel = AddNewMovieViewModel(router: router, service: nil)
+        discoverViewModel.allMovies.bind = { [unowned self] _ in self.discoveryFeedTableView.reloadData() }
+        addNewMovieViewModel.usersMovies.bind = { [unowned self] _ in self.discoveryFeedTableView.reloadData() }
     }
     
     fileprivate func setupUI() {
         discoveryFeedTableView.dataSource = self
         discoveryFeedTableView.delegate = self
         discoveryFeedTableView.register(MovieCell.nib, forCellReuseIdentifier: MovieCell.reuseIdentifier)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addNewMovie))
     }
     
     override func initialize() {
         super.initialize()
         setupUI()
-        viewModel.fetchMovies()
+        discoverViewModel.fetchMovies()
+    }
+    
+    @objc fileprivate func addNewMovie() {
+        let addNewMovieVC = AddNewMovieViewController()
+        addNewMovieVC.viewModel = addNewMovieViewModel
+        present(addNewMovieVC, animated: true, completion: nil)
     }
 }
 
@@ -54,9 +63,9 @@ extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return viewModel.usersMovies.value?.count ?? 0
+            return addNewMovieViewModel.usersMovies.value?.count ?? 0
         case 1:
-            return viewModel.allMovies.value?.count ?? 0
+            return discoverViewModel.allMovies.value?.count ?? 0
         default:
             return 0
         }
@@ -64,13 +73,12 @@ extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieCell.reuseIdentifier, for: indexPath) as? MovieCell else { return UITableViewCell() }
-        let movie = (indexPath.section == 1) ? viewModel.allMovies.value?[indexPath.row] : viewModel.usersMovies.value?[indexPath.row]
+        let movie = (indexPath.section == 1) ? discoverViewModel.allMovies.value?[indexPath.row] : addNewMovieViewModel.usersMovies.value?[indexPath.row]
         cell.movie = movie
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         return 150
     }
     
@@ -78,14 +86,14 @@ extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
         let offset = scrollView.contentOffset.y
         let maxOffset = scrollView.contentSize.height - scrollView.frame.size.height
         if (maxOffset - offset) <= 0 {
-            if (viewModel.viewState.value == .fetchedData) {
+            if (discoverViewModel.viewState.value == .fetchedData) {
                 let spinner = UIActivityIndicatorView(style: .gray)
                 spinner.startAnimating()
                 spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: discoveryFeedTableView.bounds.width, height: CGFloat(150))
                 
                 discoveryFeedTableView.tableFooterView = spinner
                 discoveryFeedTableView.tableFooterView?.isHidden = false
-                viewModel.fetchMoreMovies()
+                discoverViewModel.fetchMoreMovies()
             }
         }
     }

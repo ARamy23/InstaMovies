@@ -9,9 +9,9 @@
 import Foundation
 
 class BaseInteractor {
-    var service: BaseService.Type
+    var service: BaseService.Type?
     
-    init(service: BaseService.Type) {
+    init(service: BaseService.Type?) {
         self.service = service
     }
     
