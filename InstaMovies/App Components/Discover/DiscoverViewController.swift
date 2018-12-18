@@ -23,7 +23,6 @@ class DiscoverViewController: BaseViewController {
     fileprivate func setupUI() {
         discoveryFeedTableView.dataSource = self
         discoveryFeedTableView.delegate = self
-        
         discoveryFeedTableView.register(MovieCell.nib, forCellReuseIdentifier: MovieCell.reuseIdentifier)
     }
     
@@ -73,5 +72,21 @@ extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 150
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y
+        let maxOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        if (maxOffset - offset) <= 0 {
+            if (viewModel.viewState.value == .fetchedData) {
+                let spinner = UIActivityIndicatorView(style: .gray)
+                spinner.startAnimating()
+                spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: discoveryFeedTableView.bounds.width, height: CGFloat(150))
+                
+                discoveryFeedTableView.tableFooterView = spinner
+                discoveryFeedTableView.tableFooterView?.isHidden = false
+                viewModel.fetchMoreMovies()
+            }
+        }
     }
 }

@@ -25,27 +25,8 @@ class MovieCell: UITableViewCell {
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        // formula for cornerRadius dynamic height
-        // when on iPhone 6 family, height = 667 -> 20
-        // when any device's height, height -> X
-        // Cross Multiplication
-        // X = radius = 20 * screenHeight / 667
-        // therefor aspect ratio = 20 / 667
-        
-        cellBodyView.setupDynamicCornerRadius(withAspectRatioOf: 20/667, accordingTo: UIScreen.main.bounds.height)
-        
-        // formula for borderWidth dynamic width
-        // when on iPhone 6 family, height = 667 -> 4
-        // when any device's height, height -> X
-        // Cross Multiplication
-        // X = radius = 4 * screenHeight / 667
-        // therefor aspect ratio = 4 / 667
-        
-        cellBodyView.setupDynamicBorderWidth(withAspectRatioOf: 4 / 667, accordingTo: UIScreen.main.bounds.height)
-        
-        cellBodyView.applyDropShadow(color: .black, opacity: 0.25, offSet: CGSize(width: 0, height: 3), radius: 6, scale: true)
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        posterImageView.image = #imageLiteral(resourceName: "discover")
     }
 }
