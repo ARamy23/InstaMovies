@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+/// this is just a wrapper around the name of URLRequestBuilder to increase readablity
+/// and give more sense about what this component do as it builds the Request
+typealias BaseService = URLRequestBuilder

@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+class ToSeeIfIsReachable: BaseValidator {
+    func orThrow() throws {
+        guard !Reachability.isConnectedToNetwork() else { return }
+        throw ValidationError.unreachable
+    }
+}

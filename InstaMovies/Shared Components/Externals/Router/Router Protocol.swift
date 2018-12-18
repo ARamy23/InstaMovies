@@ -9,12 +9,12 @@
 import UIKit
 
 protocol RouterProtocol {
-    var presentedView: BaseViewController! { set get }
-    func present(view: BaseViewController)
+    var presentedVC: BaseViewController! { set get }
+    func present(vc: BaseViewController)
     
     func startActivityIndicator()
     func stopActivityIndicator()
     func dismiss()
     func pop()
-    func alert(title: String, message: String, actions: [(title: String, style: UIAlertAction.Style)])
+    func alert(title: String, message: String, actions: [(title: String, style: UIAlertAction.Style, handler: ((UIAlertAction) -> Void)?)])
 }

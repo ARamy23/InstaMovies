@@ -14,14 +14,15 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupTabBarViewControllers()
     }
     
     // MARK:- Setups
     
     private func setupTabBarViewControllers() {
-        let discoveryVC = generateNavigationController(from: <#T##UIViewController#>, title: <#T##String#>, icon: <#T##UIImage#>)
+        let discoverVC = generateNavigationController(from: DiscoverViewController(), title: "Discover", icon: #imageLiteral(resourceName: "discover"))
         
-        viewControllers = [discoveryVC]
+        viewControllers = [discoverVC]
     }
     
     //MARK:- Helpers
@@ -31,9 +32,7 @@ class MainTabBarController: UITabBarController {
         
         vc.tabBarItem.title = title
         vc.tabBarItem.image = icon
-        vc.tabBarItem.selectedImage = icon
-        vc.tabBarItem.selectedImage = icon
-        vc.navigationItem.titleView = UIImageView(image: #imageLiteral(resourceName: "AppMainBarLogo"))
+        vc.navigationController?.title = title
         vc.navigationBar.barTintColor = #colorLiteral(red: 0.1133852825, green: 0.1135058776, blue: 0.1134039238, alpha: 1)
         vc.navigationBar.tintColor = .white
         return vc

@@ -19,3 +19,5 @@ extension CodableInit where Self: Codable {
         self = try decoder.decode(Self.self, from: data)
     }
 }
+
+extension Array: CodableInit where Element: Codable {}

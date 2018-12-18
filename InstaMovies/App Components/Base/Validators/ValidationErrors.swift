@@ -1,5 +1,5 @@
 //
-//  ValidationError.swift
+//  ValidationErrors.swift
 //  InstaMovies
 //
 //  Created by Ahmed Ramy on 12/16/18.
@@ -7,3 +7,25 @@
 //
 
 import Foundation
+
+enum ValidationError: Error {
+    case unreachable
+    case serverIsDown
+    case invalidAPIKey
+    case genericError
+    
+    var message: String {
+        switch self {
+        case .unreachable: return "No Internet Connection, Please try again later"
+        case .invalidAPIKey: return "Invalid API Key"
+        case .serverIsDown: return "Server is currently down, Please try again later"
+        case .genericError: return "Oops... Something went wrong"
+        }
+    }
+}
+
+extension ValidationError: LocalizedError {
+    public var errorDescription: String? {
+        return self.message
+    }
+}

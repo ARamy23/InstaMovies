@@ -9,11 +9,40 @@
 /* Begin PBXBuildFile section */
 		E2ADC20821C698AE00719490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC20721C698AE00719490 /* AppDelegate.swift */; };
 		E2ADC20A21C698AE00719490 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC20921C698AE00719490 /* ViewController.swift */; };
-		E2ADC20D21C698AE00719490 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2ADC20B21C698AE00719490 /* Main.storyboard */; };
 		E2ADC20F21C698AF00719490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2ADC20E21C698AF00719490 /* Assets.xcassets */; };
 		E2ADC21221C698AF00719490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2ADC21021C698AF00719490 /* LaunchScreen.storyboard */; };
 		E2ADC21D21C698AF00719490 /* InstaMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC21C21C698AF00719490 /* InstaMoviesTests.swift */; };
 		E2ADC22821C698AF00719490 /* InstaMoviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC22721C698AF00719490 /* InstaMoviesUITests.swift */; };
+		E2ADC26221C6994C00719490 /* ServerPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC25D21C6994C00719490 /* ServerPaths.swift */; };
+		E2ADC26321C6994C00719490 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC25E21C6994C00719490 /* URLRequestBuilder.swift */; };
+		E2ADC26421C6994C00719490 /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC26021C6994C00719490 /* RequestHandler.swift */; };
+		E2ADC26921C6999A00719490 /* APIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC26521C6999900719490 /* APIErrors.swift */; };
+		E2ADC26A21C6999A00719490 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC26621C6999900719490 /* ResponseHandler.swift */; };
+		E2ADC26B21C6999A00719490 /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC26721C6999A00719490 /* ServerResponse.swift */; };
+		E2ADC26C21C6999A00719490 /* CodableInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC26821C6999A00719490 /* CodableInit.swift */; };
+		E2ADC27521C69C0200719490 /* Codable+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC27421C69C0200719490 /* Codable+Helpers.swift */; };
+		E2ADC27821C69C8500719490 /* MoviesDiscoveryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC27721C69C8500719490 /* MoviesDiscoveryResponse.swift */; };
+		E2ADC27E21C69DF000719490 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC27D21C69DF000719490 /* MainTabBarController.swift */; };
+		E2ADC28121C69E5300719490 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC28021C69E5300719490 /* ReusableView.swift */; };
+		E2ADC28321C69F1F00719490 /* NibNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC28221C69F1F00719490 /* NibNameProtocol.swift */; };
+		E2ADC28521C69F8C00719490 /* MainTabBarIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2ADC28421C69F8C00719490 /* MainTabBarIcons.xcassets */; };
+		E2ADC28921C6A24200719490 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC28721C6A24200719490 /* DiscoverViewController.swift */; };
+		E2ADC28A21C6A24200719490 /* DiscoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2ADC28821C6A24200719490 /* DiscoverViewController.xib */; };
+		E2ADC28E21C6A32100719490 /* Router Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC28D21C6A32100719490 /* Router Protocol.swift */; };
+		E2ADC29621C6A58700719490 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC29521C6A58700719490 /* Router.swift */; };
+		E2ADC29A21C6A9B400719490 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC29921C6A9B400719490 /* BaseViewController.swift */; };
+		E2ADC2A121C6AAFC00719490 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC2A021C6AAFC00719490 /* BaseService.swift */; };
+		E2ADC2AD21C6B74500719490 /* BaseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC2AC21C6B74500719490 /* BaseValidator.swift */; };
+		E2ADC2B021C6B85400719490 /* ReachabilityValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC2AF21C6B85400719490 /* ReachabilityValidator.swift */; };
+		E2ADC2B221C6B92F00719490 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC2B121C6B92F00719490 /* Reachability.swift */; };
+		E2ADC2B421C6BA4F00719490 /* ValidationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC2B321C6BA4F00719490 /* ValidationErrors.swift */; };
+		E2ADC2B621C6C20000719490 /* DiscoverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC2B521C6C20000719490 /* DiscoverService.swift */; };
+		E2ADC2B921C6C63600719490 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC2B821C6C63600719490 /* Keys.swift */; };
+		E2D7662F21C86E2B001E8177 /* UIView+UIActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7662E21C86E2B001E8177 /* UIView+UIActivityIndicator.swift */; };
+		E2D7663421C871C2001E8177 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7663221C871C2001E8177 /* MovieCell.swift */; };
+		E2D7663521C871C2001E8177 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D7663321C871C2001E8177 /* MovieCell.xib */; };
+		E2D7663721C878A8001E8177 /* UIImageView+URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7663621C878A8001E8177 /* UIImageView+URLSession.swift */; };
+		E2D7663921C87B6D001E8177 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7663821C87B6D001E8177 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +66,6 @@
 		E2ADC20421C698AE00719490 /* InstaMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2ADC20721C698AE00719490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2ADC20921C698AE00719490 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E2ADC20C21C698AE00719490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2ADC20E21C698AF00719490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2ADC21121C698AF00719490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2ADC21321C698AF00719490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +75,36 @@
 		E2ADC22321C698AF00719490 /* InstaMoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaMoviesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2ADC22721C698AF00719490 /* InstaMoviesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaMoviesUITests.swift; sourceTree = "<group>"; };
 		E2ADC22921C698AF00719490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2ADC25D21C6994C00719490 /* ServerPaths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerPaths.swift; sourceTree = "<group>"; };
+		E2ADC25E21C6994C00719490 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
+		E2ADC26021C6994C00719490 /* RequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
+		E2ADC26521C6999900719490 /* APIErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIErrors.swift; sourceTree = "<group>"; };
+		E2ADC26621C6999900719490 /* ResponseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
+		E2ADC26721C6999A00719490 /* ServerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
+		E2ADC26821C6999A00719490 /* CodableInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableInit.swift; sourceTree = "<group>"; };
+		E2ADC27421C69C0200719490 /* Codable+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Helpers.swift"; sourceTree = "<group>"; };
+		E2ADC27721C69C8500719490 /* MoviesDiscoveryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDiscoveryResponse.swift; sourceTree = "<group>"; };
+		E2ADC27D21C69DF000719490 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		E2ADC28021C69E5300719490 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		E2ADC28221C69F1F00719490 /* NibNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibNameProtocol.swift; sourceTree = "<group>"; };
+		E2ADC28421C69F8C00719490 /* MainTabBarIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MainTabBarIcons.xcassets; sourceTree = "<group>"; };
+		E2ADC28721C6A24200719490 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		E2ADC28821C6A24200719490 /* DiscoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverViewController.xib; sourceTree = "<group>"; };
+		E2ADC28D21C6A32100719490 /* Router Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router Protocol.swift"; sourceTree = "<group>"; };
+		E2ADC29521C6A58700719490 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		E2ADC29921C6A9B400719490 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E2ADC2A021C6AAFC00719490 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		E2ADC2AC21C6B74500719490 /* BaseValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseValidator.swift; sourceTree = "<group>"; };
+		E2ADC2AF21C6B85400719490 /* ReachabilityValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityValidator.swift; sourceTree = "<group>"; };
+		E2ADC2B121C6B92F00719490 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		E2ADC2B321C6BA4F00719490 /* ValidationErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationErrors.swift; sourceTree = "<group>"; };
+		E2ADC2B521C6C20000719490 /* DiscoverService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverService.swift; sourceTree = "<group>"; };
+		E2ADC2B821C6C63600719490 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		E2D7662E21C86E2B001E8177 /* UIView+UIActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+UIActivityIndicator.swift"; sourceTree = "<group>"; };
+		E2D7663221C871C2001E8177 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		E2D7663321C871C2001E8177 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		E2D7663621C878A8001E8177 /* UIImageView+URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URLSession.swift"; sourceTree = "<group>"; };
+		E2D7663821C87B6D001E8177 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +155,9 @@
 		E2ADC20621C698AE00719490 /* InstaMovies */ = {
 			isa = PBXGroup;
 			children = (
-				E2ADC20721C698AE00719490 /* AppDelegate.swift */,
+				E2ADC27A21C69D2A00719490 /* Shared Components */,
+				E2ADC27921C69D0500719490 /* App Components */,
 				E2ADC20921C698AE00719490 /* ViewController.swift */,
-				E2ADC20B21C698AE00719490 /* Main.storyboard */,
-				E2ADC20E21C698AF00719490 /* Assets.xcassets */,
-				E2ADC21021C698AF00719490 /* LaunchScreen.storyboard */,
 				E2ADC21321C698AF00719490 /* Info.plist */,
 			);
 			path = InstaMovies;
@@ -123,6 +179,205 @@
 				E2ADC22921C698AF00719490 /* Info.plist */,
 			);
 			path = InstaMoviesUITests;
+			sourceTree = "<group>";
+		};
+		E2ADC23521C698BA00719490 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E2ADC25C21C6994C00719490 /* Request */,
+				E2ADC25F21C6994C00719490 /* RequestHandler */,
+				E2ADC26121C6994C00719490 /* Response */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E2ADC25C21C6994C00719490 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				E2ADC25D21C6994C00719490 /* ServerPaths.swift */,
+				E2ADC25E21C6994C00719490 /* URLRequestBuilder.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		E2ADC25F21C6994C00719490 /* RequestHandler */ = {
+			isa = PBXGroup;
+			children = (
+				E2ADC26021C6994C00719490 /* RequestHandler.swift */,
+			);
+			path = RequestHandler;
+			sourceTree = "<group>";
+		};
+		E2ADC26121C6994C00719490 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				E2ADC26521C6999900719490 /* APIErrors.swift */,
+				E2ADC26821C6999A00719490 /* CodableInit.swift */,
+				E2ADC26621C6999900719490 /* ResponseHandler.swift */,
+				E2ADC26721C6999A00719490 /* ServerResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		E2ADC26F21C69AD600719490 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2ADC27321C69BF000719490 /* Networking */,
+				E2ADC2B121C6B92F00719490 /* Reachability.swift */,
+				E2D7663821C87B6D001E8177 /* UIView.swift */,
+				E2D7662E21C86E2B001E8177 /* UIView+UIActivityIndicator.swift */,
+				E2D7663621C878A8001E8177 /* UIImageView+URLSession.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E2ADC27321C69BF000719490 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E2ADC27421C69C0200719490 /* Codable+Helpers.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E2ADC27621C69C1600719490 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E2ADC27721C69C8500719490 /* MoviesDiscoveryResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E2ADC27921C69D0500719490 /* App Components */ = {
+			isa = PBXGroup;
+			children = (
+				E2ADC29821C6A9A900719490 /* Base */,
+				E2ADC28621C6A22400719490 /* Discover */,
+				E2ADC27C21C69DCC00719490 /* MainTabBarController */,
+			);
+			path = "App Components";
+			sourceTree = "<group>";
+		};
+		E2ADC27A21C69D2A00719490 /* Shared Components */ = {
+			isa = PBXGroup;
+			children = (
+				E2ADC2B721C6C62B00719490 /* Keys */,
+				E2ADC29421C6A40900719490 /* Externals */,
+				E2ADC27F21C69E2800719490 /* Protocols */,
+				E2ADC27B21C69D4A00719490 /* AppAssets */,
+				E2ADC27621C69C1600719490 /* Models */,
+				E2ADC26F21C69AD600719490 /* Extensions */,
+				E2ADC23521C698BA00719490 /* Networking */,
+			);
+			path = "Shared Components";
+			sourceTree = "<group>";
+		};
+		E2ADC27B21C69D4A00719490 /* AppAssets */ = {
+			isa = PBXGroup;
+			children = (
+				E2ADC20721C698AE00719490 /* AppDelegate.swift */,
+				E2ADC20E21C698AF00719490 /* Assets.xcassets */,
+				E2ADC21021C698AF00719490 /* LaunchScreen.storyboard */,
+			);
+			path = AppAssets;
+			sourceTree = "<group>";
+		};
+		E2ADC27C21C69DCC00719490 /* MainTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				E2ADC27D21C69DF000719490 /* MainTabBarController.swift */,
+				E2ADC28421C69F8C00719490 /* MainTabBarIcons.xcassets */,
+			);
+			path = MainTabBarController;
+			sourceTree = "<group>";
+		};
+		E2ADC27F21C69E2800719490 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E2ADC28021C69E5300719490 /* ReusableView.swift */,
+				E2ADC28221C69F1F00719490 /* NibNameProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E2ADC28621C6A22400719490 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				E2D7663121C871AA001E8177 /* Cells */,
+				E2D7663021C8719C001E8177 /* Xib */,
+				E2ADC2C221C6DB4100719490 /* Network */,
+				E2ADC28721C6A24200719490 /* DiscoverViewController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		E2ADC29421C6A40900719490 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				E2ADC29721C6A86700719490 /* Router */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		E2ADC29721C6A86700719490 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E2ADC29521C6A58700719490 /* Router.swift */,
+				E2ADC28D21C6A32100719490 /* Router Protocol.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E2ADC29821C6A9A900719490 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E2ADC2AE21C6B78200719490 /* Validators */,
+				E2ADC29921C6A9B400719490 /* BaseViewController.swift */,
+				E2ADC2A021C6AAFC00719490 /* BaseService.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E2ADC2AE21C6B78200719490 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				E2ADC2AC21C6B74500719490 /* BaseValidator.swift */,
+				E2ADC2AF21C6B85400719490 /* ReachabilityValidator.swift */,
+				E2ADC2B321C6BA4F00719490 /* ValidationErrors.swift */,
+			);
+			path = Validators;
+			sourceTree = "<group>";
+		};
+		E2ADC2B721C6C62B00719490 /* Keys */ = {
+			isa = PBXGroup;
+			children = (
+				E2ADC2B821C6C63600719490 /* Keys.swift */,
+			);
+			path = Keys;
+			sourceTree = "<group>";
+		};
+		E2ADC2C221C6DB4100719490 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E2ADC2B521C6C20000719490 /* DiscoverService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E2D7663021C8719C001E8177 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				E2ADC28821C6A24200719490 /* DiscoverViewController.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		E2D7663121C871AA001E8177 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E2D7663221C871C2001E8177 /* MovieCell.swift */,
+				E2D7663321C871C2001E8177 /* MovieCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +448,7 @@
 				TargetAttributes = {
 					E2ADC20321C698AE00719490 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					E2ADC21721C698AF00719490 = {
 						CreatedOnToolsVersion = 10.1;
@@ -230,8 +486,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2ADC21221C698AF00719490 /* LaunchScreen.storyboard in Resources */,
+				E2ADC28A21C6A24200719490 /* DiscoverViewController.xib in Resources */,
+				E2ADC28521C69F8C00719490 /* MainTabBarIcons.xcassets in Resources */,
 				E2ADC20F21C698AF00719490 /* Assets.xcassets in Resources */,
-				E2ADC20D21C698AE00719490 /* Main.storyboard in Resources */,
+				E2D7663521C871C2001E8177 /* MovieCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +515,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2ADC20A21C698AE00719490 /* ViewController.swift in Sources */,
+				E2ADC26421C6994C00719490 /* RequestHandler.swift in Sources */,
+				E2D7663421C871C2001E8177 /* MovieCell.swift in Sources */,
+				E2ADC2AD21C6B74500719490 /* BaseValidator.swift in Sources */,
+				E2D7663921C87B6D001E8177 /* UIView.swift in Sources */,
+				E2ADC27521C69C0200719490 /* Codable+Helpers.swift in Sources */,
+				E2D7662F21C86E2B001E8177 /* UIView+UIActivityIndicator.swift in Sources */,
+				E2ADC26C21C6999A00719490 /* CodableInit.swift in Sources */,
+				E2ADC26321C6994C00719490 /* URLRequestBuilder.swift in Sources */,
+				E2ADC29A21C6A9B400719490 /* BaseViewController.swift in Sources */,
+				E2ADC28921C6A24200719490 /* DiscoverViewController.swift in Sources */,
+				E2ADC28121C69E5300719490 /* ReusableView.swift in Sources */,
+				E2ADC26221C6994C00719490 /* ServerPaths.swift in Sources */,
+				E2ADC2B921C6C63600719490 /* Keys.swift in Sources */,
+				E2ADC27821C69C8500719490 /* MoviesDiscoveryResponse.swift in Sources */,
+				E2ADC2B221C6B92F00719490 /* Reachability.swift in Sources */,
+				E2ADC2A121C6AAFC00719490 /* BaseService.swift in Sources */,
+				E2ADC27E21C69DF000719490 /* MainTabBarController.swift in Sources */,
+				E2ADC29621C6A58700719490 /* Router.swift in Sources */,
+				E2ADC28E21C6A32100719490 /* Router Protocol.swift in Sources */,
 				E2ADC20821C698AE00719490 /* AppDelegate.swift in Sources */,
+				E2ADC28321C69F1F00719490 /* NibNameProtocol.swift in Sources */,
+				E2ADC2B621C6C20000719490 /* DiscoverService.swift in Sources */,
+				E2ADC26B21C6999A00719490 /* ServerResponse.swift in Sources */,
+				E2ADC26921C6999A00719490 /* APIErrors.swift in Sources */,
+				E2ADC2B021C6B85400719490 /* ReachabilityValidator.swift in Sources */,
+				E2D7663721C878A8001E8177 /* UIImageView+URLSession.swift in Sources */,
+				E2ADC2B421C6BA4F00719490 /* ValidationErrors.swift in Sources */,
+				E2ADC26A21C6999A00719490 /* ResponseHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +578,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E2ADC20B21C698AE00719490 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E2ADC20C21C698AE00719490 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E2ADC21021C698AF00719490 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -432,15 +709,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 969Y6REAB6;
 				INFOPLIST_FILE = InstaMovies/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ARamy23.InstaMovies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -450,9 +730,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 969Y6REAB6;
 				INFOPLIST_FILE = InstaMovies/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

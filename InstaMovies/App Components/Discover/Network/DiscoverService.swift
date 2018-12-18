@@ -44,4 +44,11 @@ enum DiscoverService: BaseService {
         return URLEncoding.default
     }
     
+    init(_ service: DiscoverService) {
+        switch service {
+        case .discoverMovies(page: let page):
+            self = .discoverMovies(page: page)
+        }
+    }
+    
 }

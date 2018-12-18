@@ -11,6 +11,5 @@ import Foundation
 struct ServerPath
 {
     // write static properties here
-    static let baseURL = "​http://api.themoviedb.org/3/"
-    static let discover = "discover"
+    static let discover = "discover/movie"
 }

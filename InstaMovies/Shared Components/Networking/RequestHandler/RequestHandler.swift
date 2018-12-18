@@ -32,6 +32,7 @@ extension APIRequestHandler where Self: URLRequestConvertible
     {
         
         request(self){(response) in
+            
             DispatchQueue.main.async
             {
                 self.handleResponse(response, completion: completion)
