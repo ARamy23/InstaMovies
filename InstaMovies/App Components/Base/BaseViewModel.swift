@@ -27,7 +27,7 @@ class BaseViewModel {
         }
     }
     
-    init(router: RouterProtocol, service: BaseService.Type) {
+    init(router: RouterProtocol, service: BaseService.Type?) {
         self.router = router
         self.interactor = BaseInteractor(service: service)
     }

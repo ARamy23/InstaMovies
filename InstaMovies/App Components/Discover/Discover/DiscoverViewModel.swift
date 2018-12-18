@@ -9,7 +9,6 @@
 import Foundation
 
 class DiscoverViewModel: BaseViewModel {
-    var usersMovies: Dynamic<[Movie]> = Dynamic([])
     var allMovies: Dynamic<[Movie]> = Dynamic([])
     var totalPages: Dynamic<Int?> = Dynamic(0)
     var totalResults: Dynamic<Int?> = Dynamic(0)

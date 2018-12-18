@@ -13,6 +13,7 @@ enum ValidationError: Error {
     case serverIsDown
     case invalidAPIKey
     case genericError
+    case emptyValue(key: String)
     
     var message: String {
         switch self {
@@ -20,6 +21,7 @@ enum ValidationError: Error {
         case .invalidAPIKey: return "Invalid API Key"
         case .serverIsDown: return "Server is currently down, Please try again later"
         case .genericError: return "Oops... Something went wrong"
+        case .emptyValue(key: let key): return "Please fill in the \(key) value"
         }
     }
 }

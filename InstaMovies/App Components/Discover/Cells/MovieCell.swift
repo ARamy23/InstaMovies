@@ -18,7 +18,8 @@ class MovieCell: UITableViewCell {
     
     var movie: Movie? {
         didSet {
-            posterImageView.downloadImage(from: movie?.posterPath)
+            if movie?.posterPath != nil { posterImageView.downloadImage(from: movie?.posterPath) }
+            else if movie?.image != nil { posterImageView.image = movie?.image }
             movieTitleLabel.text = movie?.title
             movieOverViewLabel.text = movie?.overview
             movieReleaseDateLabel.text = movie?.releaseDate

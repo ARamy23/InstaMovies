@@ -6,7 +6,7 @@
 //  Copyright © 2018 Ahmed Ramy. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct MoviesDiscoveryResponse: Codable, CodableInit {
     let page, totalResults, totalPages: Int?
@@ -23,11 +23,12 @@ struct MoviesDiscoveryResponse: Codable, CodableInit {
 struct Movie: Codable, CodableInit {
     let title, posterPath, overview, releaseDate: String?
     
-    init(title: String, posterPath: String?, overview: String?, releaseDate: String?) {
+    init(title: String, image: UIImage?, overview: String?, releaseDate: String?) {
         self.title = title
-        self.posterPath = posterPath
+        self.posterPath = nil
         self.overview = overview
         self.releaseDate = releaseDate
+        self.image = image
     }
     
     enum CodingKeys: String, CodingKey {
@@ -36,4 +37,7 @@ struct Movie: Codable, CodableInit {
         case overview
         case releaseDate = "release_date"
     }
+    
+    // MARK: User Created Movie Properties
+    var image: UIImage? = nil
 }
