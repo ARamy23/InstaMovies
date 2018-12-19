@@ -16,7 +16,7 @@ class AddNewMovieViewModel: BaseViewModel {
     var movieOverview: Dynamic<String> = Dynamic("")
     var date: Dynamic<String> = Dynamic("")
     
-    func save(isSuccess: @escaping (Bool) -> Void) {
+    func saveMovie(isSuccess: @escaping (Bool) -> Void = {_ in }) {
         AddNewMovieInteractor(movieTitle.value ?? "No Title Set", overview: movieOverview.value, date: date.value ?? "No Date", posterImage: moviePoster.value)
             .save { [weak self] (model, error) in
                 guard let self = self else {
@@ -38,6 +38,7 @@ class AddNewMovieViewModel: BaseViewModel {
                 }
                 
                 self.usersMovies.value?.append(movie)
+                self.router.dismiss()
                 isSuccess(true)
         }
     }

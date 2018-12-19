@@ -282,6 +282,7 @@
 			children = (
 				E2ADC29821C6A9A900719490 /* Base */,
 				E2ADC28621C6A22400719490 /* Discover */,
+				E2D7664721C95D22001E8177 /* Add New Movie */,
 				E2ADC27C21C69DCC00719490 /* MainTabBarController */,
 			);
 			path = "App Components";
@@ -337,8 +338,9 @@
 				E2D7663121C871AA001E8177 /* Cells */,
 				E2D7663021C8719C001E8177 /* Xib */,
 				E2ADC2C221C6DB4100719490 /* Network */,
-				E2D7664621C95D1F001E8177 /* Discover */,
-				E2D7664721C95D22001E8177 /* Add New Movie */,
+				E2ADC28721C6A24200719490 /* DiscoverViewController.swift */,
+				E2D7663E21C91EF2001E8177 /* DiscoverViewModel.swift */,
+				E2D7664021C91EFD001E8177 /* DiscoverInteractor.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -416,16 +418,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		E2D7664621C95D1F001E8177 /* Discover */ = {
-			isa = PBXGroup;
-			children = (
-				E2ADC28721C6A24200719490 /* DiscoverViewController.swift */,
-				E2D7663E21C91EF2001E8177 /* DiscoverViewModel.swift */,
-				E2D7664021C91EFD001E8177 /* DiscoverInteractor.swift */,
-			);
-			path = Discover;
-			sourceTree = "<group>";
-		};
 		E2D7664721C95D22001E8177 /* Add New Movie */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				E2DE9DFF21CA270400610E7D /* Discover */,
+				E2DE9E0F21CAFD5300610E7D /* Add New Movie */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -473,7 +466,6 @@
 			isa = PBXGroup;
 			children = (
 				E2DE9E0321CA45DE00610E7D /* DiscoverModuleTest.swift */,
-				E2DE9E0D21CAB82200610E7D /* AddNewMovieModuleTest.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -484,6 +476,14 @@
 				E2DE9E0121CA44EE00610E7D /* RouterMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		E2DE9E0F21CAFD5300610E7D /* Add New Movie */ = {
+			isa = PBXGroup;
+			children = (
+				E2DE9E0D21CAB82200610E7D /* AddNewMovieModuleTest.swift */,
+			);
+			path = "Add New Movie";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

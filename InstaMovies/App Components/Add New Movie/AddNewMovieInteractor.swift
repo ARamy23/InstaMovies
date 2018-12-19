@@ -23,7 +23,7 @@ class AddNewMovieInteractor: BaseInteractor {
     }
     
     override func toValidate() throws {
-        try ToSeeIfIsNotEmpty(value: title, key: "Movie Title").orThrow()
+        try ToSeeIfIsNotEmpty(value: title, key: Keys.movieTitle).orThrow()
     }
     
     override func request(onComplete: @escaping (CodableInit?, Error?) -> Void) {

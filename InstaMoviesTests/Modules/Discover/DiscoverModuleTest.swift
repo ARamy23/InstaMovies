@@ -36,7 +36,7 @@ class DiscoverTests: BaseModuleTest {
         // Then
         let expectedError = ValidationError.unreachable.localizedDescription
         // We executing a network call, the router has two actions after validating the reachability using our test value for the reachability class
-        // one actions is closing the activity indicator
+        // first action is stopping the activity indicator
         // and the other is the error we are expecting which is unreachable error
         XCTAssertEqual(router.actions.count, 2)
         XCTAssertEqual(router.actions[1], .alert(expectedError))
@@ -53,7 +53,7 @@ class DiscoverTests: BaseModuleTest {
         
         // Then
         XCTAssertEqual(router.actions.count, 1)
-        
+        XCTAssertEqual(router.actions[0], .activityStop)
         Reachability.testingValue = nil
     }
     

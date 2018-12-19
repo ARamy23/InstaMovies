@@ -58,14 +58,12 @@ class AddNewMovieViewController: BaseViewController {
         let dateString = dateFormatter.string(from: datePicker.date)
         viewModel.date.value = "\(dateString)"
         viewModel.moviePoster.value = posterImageView.image
-        viewModel.save { (hasSavedSuccessfully) in
-            if hasSavedSuccessfully { self.dismiss(animated: true, completion: nil) }
-        }
+        viewModel.saveMovie()
         
     }
     
     @IBAction func dismiss(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        router.dismiss()
     }
 }
 
