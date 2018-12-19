@@ -21,8 +21,8 @@ class BaseViewModel {
     var viewState: Dynamic<BaseViewState> = Dynamic(.loading) {
         didSet {
             switch viewState.value {
-            case .loading?: router.presentedVC.view.activityStartAnimating()
-            default: router.presentedVC.view.activityStopAnimating()
+            case .loading?: router.startActivityIndicator()
+            default: router.stopActivityIndicator()
             }
         }
     }

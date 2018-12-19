@@ -16,9 +16,17 @@ class Router: RouterProtocol {
         presentedVC.present(vc, animated: true, completion: nil)
     }
     
-    func startActivityIndicator() { }
+    func startActivityIndicator() {
+        if presentedVC != nil {
+            presentedVC.view.activityStartAnimating()
+        }
+    }
     
-    func stopActivityIndicator() { }
+    func stopActivityIndicator() {
+        if presentedVC != nil {
+            presentedVC.view.activityStopAnimating()
+        }
+    }
     
     func dismiss() {
         presentedVC.dismiss(animated: true, completion: nil)
