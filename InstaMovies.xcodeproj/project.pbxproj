@@ -10,7 +10,6 @@
 		E2ADC20821C698AE00719490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC20721C698AE00719490 /* AppDelegate.swift */; };
 		E2ADC20F21C698AF00719490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2ADC20E21C698AF00719490 /* Assets.xcassets */; };
 		E2ADC21221C698AF00719490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2ADC21021C698AF00719490 /* LaunchScreen.storyboard */; };
-		E2ADC21D21C698AF00719490 /* InstaMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC21C21C698AF00719490 /* InstaMoviesTests.swift */; };
 		E2ADC22821C698AF00719490 /* InstaMoviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC22721C698AF00719490 /* InstaMoviesUITests.swift */; };
 		E2ADC26221C6994C00719490 /* ServerPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC25D21C6994C00719490 /* ServerPaths.swift */; };
 		E2ADC26321C6994C00719490 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADC25E21C6994C00719490 /* URLRequestBuilder.swift */; };
@@ -54,6 +53,10 @@
 		E2D7665521C96ACC001E8177 /* AddNewMovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D7665321C96ACC001E8177 /* AddNewMovieViewController.xib */; };
 		E2D7665821C97978001E8177 /* isEmptyValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7665721C97978001E8177 /* isEmptyValidator.swift */; };
 		E2D7665A21C98DDE001E8177 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7665921C98DDE001E8177 /* KeyboardLayoutConstraint.swift */; };
+		E2DE9DFE21CA205A00610E7D /* BaseModuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE9DFD21CA205900610E7D /* BaseModuleTest.swift */; };
+		E2DE9E0221CA44EE00610E7D /* RouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE9E0121CA44EE00610E7D /* RouterMock.swift */; };
+		E2DE9E0421CA45DE00610E7D /* DiscoverModuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE9E0321CA45DE00610E7D /* DiscoverModuleTest.swift */; };
+		E2DE9E0E21CAB82200610E7D /* AddNewMovieModuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE9E0D21CAB82200610E7D /* AddNewMovieModuleTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +83,6 @@
 		E2ADC21121C698AF00719490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2ADC21321C698AF00719490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2ADC21821C698AF00719490 /* InstaMoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaMoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2ADC21C21C698AF00719490 /* InstaMoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaMoviesTests.swift; sourceTree = "<group>"; };
 		E2ADC21E21C698AF00719490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2ADC22321C698AF00719490 /* InstaMoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaMoviesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2ADC22721C698AF00719490 /* InstaMoviesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaMoviesUITests.swift; sourceTree = "<group>"; };
@@ -127,6 +129,10 @@
 		E2D7665321C96ACC001E8177 /* AddNewMovieViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewMovieViewController.xib; sourceTree = "<group>"; };
 		E2D7665721C97978001E8177 /* isEmptyValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isEmptyValidator.swift; sourceTree = "<group>"; };
 		E2D7665921C98DDE001E8177 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
+		E2DE9DFD21CA205900610E7D /* BaseModuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModuleTest.swift; sourceTree = "<group>"; };
+		E2DE9E0121CA44EE00610E7D /* RouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMock.swift; sourceTree = "<group>"; };
+		E2DE9E0321CA45DE00610E7D /* DiscoverModuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverModuleTest.swift; sourceTree = "<group>"; };
+		E2DE9E0D21CAB82200610E7D /* AddNewMovieModuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMovieModuleTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +193,9 @@
 		E2ADC21B21C698AF00719490 /* InstaMoviesTests */ = {
 			isa = PBXGroup;
 			children = (
-				E2ADC21C21C698AF00719490 /* InstaMoviesTests.swift */,
+				E2DE9DFD21CA205900610E7D /* BaseModuleTest.swift */,
+				E2DE9DFC21CA1FE400610E7D /* Modules */,
+				E2DE9E0021CA44D500610E7D /* Mocks */,
 				E2ADC21E21C698AF00719490 /* Info.plist */,
 			);
 			path = InstaMoviesTests;
@@ -369,7 +377,6 @@
 			children = (
 				E2ADC2AC21C6B74500719490 /* BaseValidator.swift */,
 				E2ADC2AF21C6B85400719490 /* ReachabilityValidator.swift */,
-				E2D7665721C97978001E8177 /* isEmptyValidator.swift */,
 				E2ADC2B321C6BA4F00719490 /* ValidationErrors.swift */,
 			);
 			path = Validators;
@@ -441,6 +448,7 @@
 		E2D7665621C9794F001E8177 /* Validators */ = {
 			isa = PBXGroup;
 			children = (
+				E2D7665721C97978001E8177 /* isEmptyValidator.swift */,
 			);
 			path = Validators;
 			sourceTree = "<group>";
@@ -451,6 +459,31 @@
 				E2D7665921C98DDE001E8177 /* KeyboardLayoutConstraint.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		E2DE9DFC21CA1FE400610E7D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E2DE9DFF21CA270400610E7D /* Discover */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		E2DE9DFF21CA270400610E7D /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				E2DE9E0321CA45DE00610E7D /* DiscoverModuleTest.swift */,
+				E2DE9E0D21CAB82200610E7D /* AddNewMovieModuleTest.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		E2DE9E0021CA44D500610E7D /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E2DE9E0121CA44EE00610E7D /* RouterMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -634,7 +667,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2ADC21D21C698AF00719490 /* InstaMoviesTests.swift in Sources */,
+				E2DE9E0421CA45DE00610E7D /* DiscoverModuleTest.swift in Sources */,
+				E2DE9E0221CA44EE00610E7D /* RouterMock.swift in Sources */,
+				E2DE9DFE21CA205A00610E7D /* BaseModuleTest.swift in Sources */,
+				E2DE9E0E21CAB82200610E7D /* AddNewMovieModuleTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
