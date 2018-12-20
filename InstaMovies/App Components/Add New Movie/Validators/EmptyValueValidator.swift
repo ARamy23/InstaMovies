@@ -1,5 +1,5 @@
 //
-//  isEmptyValidator.swift
+//  EmptyValueValidator.swift
 //  InstaMovies
 //
 //  Created by Ahmed Ramy on 12/18/18.
@@ -8,7 +8,9 @@
 
 import Foundation
 
-class ToSeeIfIsNotEmpty: BaseValidator {
+typealias ToSeeIfIsNotEmpty = EmptyValueValidator
+
+class EmptyValueValidator: BaseValidator {
     var value: Any?
     var key: String
     
