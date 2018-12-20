@@ -24,11 +24,10 @@ Rx stuff outta of it)_
 
 ### And, What does it lack?
 
-- [] currently am working on improving the caching technique to enhance UX
-- [] a changelog
-- [] add versioning 
-- [] caching
-- [] an effective handlation of the bind between the viewController and the viewModel
+- [ ] currently am working on improving the caching technique to enhance UX
+- [ ] a changelog
+- [ ] add versioning 
+- [ ] an effective handlation of the bind between the viewController and the viewModel
 
 ### Okay, what can this project do?
 
