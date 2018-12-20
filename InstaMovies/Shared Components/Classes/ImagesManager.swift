@@ -10,13 +10,9 @@ import UIKit
 
 class ImagesManager {
     
-    var task: URLSessionDownloadTask!
-    var session: URLSession!
     var cache: NSCache<NSString, UIImage>!
     
     init() {
-        session = URLSession.shared
-        task = URLSessionDownloadTask()
         self.cache = NSCache()
     }
     
@@ -31,7 +27,7 @@ class ImagesManager {
                 completionHandler(placeholder)
             }
             let url = URL(string: "https://image.tmdb.org/t/p/original")!.appendingPathComponent(imagePath)
-            task = session.downloadTask(with: url, completionHandler: { (location, response, error) in
+            DispatchQueue.global(qos: .background).async {
                 if let data = try? Data(contentsOf: url) {
                     let img: UIImage! = UIImage(data: data)
                     self.cache.setObject(img, forKey: imagePath as NSString)
@@ -39,8 +35,7 @@ class ImagesManager {
                         completionHandler(img)
                     }
                 }
-            })
-            task.resume()
+            }
         }
     }
 }
