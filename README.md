@@ -25,9 +25,8 @@ Rx stuff outta of it)_
 ### And, What does it lack?
 
 - [ ] currently am working on improving the caching technique to enhance UX
-- [ ] a changelog
-- [ ] add versioning 
-- [ ] an effective handlation of the bind between the viewController and the viewModel
+- [ ] a changelog 
+- [ ] an effective handlation of the bind between the viewController and the viewModel in case of threadings
 
 ### Okay, what can this project do?
 
@@ -39,3 +38,4 @@ Rx stuff outta of it)_
   - [X] checking if user is reachable and thus alerting him that there is no internet connection
   - [X] checking upon creating a movie if the user has entered a title to the movie or not and thus the app would alert the user of that
 - [X] download images and assigning them correctly without images appearing out of place (due to cell reuse)
+- [X] versionings
