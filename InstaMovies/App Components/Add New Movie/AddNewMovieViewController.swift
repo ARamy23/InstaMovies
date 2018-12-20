@@ -39,15 +39,9 @@ class AddNewMovieViewController: BaseViewController {
             self.present(self.imagePicker, animated: true, completion: nil)
         })
         
-        let cameraAction: (String, UIAlertAction.Style, ((UIAlertAction) -> Void)?) = (title: "Camera", style: .default, handler: { (_) in
-            self.imagePicker.sourceType = .camera
-            self.present(self.imagePicker, animated: true, completion: nil)
-        })
-        
         let cancelAction: (String, UIAlertAction.Style, ((UIAlertAction) -> Void)?) = (title: "Cancel", style: .cancel, handler: nil)
-        router.alert(title: "Choose Poster Source", message: "", actions: [photoGalleryAction,
-                                                                           cameraAction,
-                                                                           cancelAction])
+        
+        router.alert(title: "Choose Poster Source", message: "", actions: [photoGalleryAction, cancelAction])
     }
     
     @IBAction func saveMovie(_ sender: Any) {
@@ -56,7 +50,7 @@ class AddNewMovieViewController: BaseViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let dateString = dateFormatter.string(from: datePicker.date)
-        viewModel.date.value = "\(dateString)"
+        viewModel.date.value = dateString
         viewModel.moviePoster.value = posterImageView.image
         viewModel.saveMovie()
         

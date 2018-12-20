@@ -10,11 +10,9 @@ import UIKit
 
 extension UIView {
     
-    func round(corners: UIRectCorner = .allCorners, withRadiusOf radius: CGFloat) {
-        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        layer.mask = mask
+    func round(withRadiusOf radius: CGFloat) {
+        layer.cornerRadius = radius
+        layer.masksToBounds = radius > 0
     }
     
     func addBorders(ofWidth width: CGFloat, color: UIColor = UIColor.white) {
@@ -32,19 +30,7 @@ extension UIView {
         self.addBorders(ofWidth: borderWidth)
     }
     
-    func applyDropShadow(scale: Bool = true) {
-        layer.masksToBounds = false
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.5
-        layer.shadowOffset = CGSize(width: -1, height: 1)
-        layer.shadowRadius = 1
-        
-        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
-        layer.shouldRasterize = true
-        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
-    }
-    
-    func applyDropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
+    func applyDropShadow(color: UIColor = .black, opacity: Float = 0.5, offSet: CGSize = CGSize(width: -1, height: 1), radius: CGFloat = 1, scale: Bool = true) {
         layer.masksToBounds = false
         layer.shadowColor = color.cgColor
         layer.shadowOpacity = opacity
