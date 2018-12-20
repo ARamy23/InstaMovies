@@ -12,6 +12,8 @@ class DiscoverViewController: BaseViewController {
     
     @IBOutlet private weak var discoveryFeedTableView: UITableView!
     
+    var selectedIndexPath: IndexPath?
+    
     var discoverViewModel: DiscoverViewModel!
     var addNewMovieViewModel: AddNewMovieViewModel!
     
@@ -82,11 +84,15 @@ extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieCell.reuseIdentifier, for: indexPath) as? MovieCell else { return UITableViewCell() }
+        cell.selectionStyle = .none
         let movie = (indexPath.section == 1) ? discoverViewModel.allMovies.value?[indexPath.row] : addNewMovieViewModel.usersMovies.value?[indexPath.row]
         cell.movie = movie
+        // if it's a user's movie and it has an image, use that image
         if let userMovieImage = movie?.image {
             cell.posterImageView.image = userMovieImage
-        } else if let posterPath = movie?.posterPath {
+        }
+        // else either get the image from the cache or download it
+        else if let posterPath = movie?.posterPath {
             ImagesManager().getImage(from: posterPath) { (moviePoster) in
                 guard let cellToUpdate = tableView.cellForRow(at: indexPath) as? MovieCell else { return }
                 cellToUpdate.posterImageView.image = moviePoster
@@ -96,7 +102,35 @@ extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        let movie = (indexPath.section == 1) ? discoverViewModel.allMovies.value?[indexPath.row] : addNewMovieViewModel.usersMovies.value?[indexPath.row]
+        let collapsedHeight: CGFloat = 150
+        let overviewCollapsedHeight: CGFloat = 47
+        let overviewExpandedHeight: CGFloat = estimateOverviewSize(text: movie?.overview ?? "").height
+        let expandedHeight: CGFloat = collapsedHeight - overviewCollapsedHeight + overviewExpandedHeight
+        
+        if selectedIndexPath != nil, selectedIndexPath! == indexPath {
+            return expandedHeight
+        } else {
+            return collapsedHeight
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch selectedIndexPath {
+        case nil: selectedIndexPath = indexPath
+        default:
+            selectedIndexPath = (selectedIndexPath! == indexPath) ? nil : indexPath
+        }
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+    
+    private func estimateOverviewSize(text: String) -> CGRect
+    {
+        let size = CGSize(width: 375, height: 1000)
+        return NSString(string: text).boundingRect(with: size,
+                                                   options: NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin),
+                                                   attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16)],
+                                                   context: nil)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
