@@ -27,6 +27,9 @@ class DiscoverViewController: BaseViewController {
         discoveryFeedTableView.delegate = self
         discoveryFeedTableView.register(MovieCell.nib, forCellReuseIdentifier: MovieCell.reuseIdentifier)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addNewMovie))
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshAllMovies), for: .valueChanged)
+        discoveryFeedTableView.refreshControl = refreshControl
     }
     
     override func initialize() {
@@ -35,6 +38,10 @@ class DiscoverViewController: BaseViewController {
         discoverViewModel.fetchMovies()
         discoverViewModel.router = self.router
         addNewMovieViewModel.router = self.router
+    }
+    
+    @objc fileprivate func refreshAllMovies() {
+        discoverViewModel.fetchMovies()
     }
     
     @objc fileprivate func addNewMovie() {
