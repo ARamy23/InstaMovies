@@ -25,8 +25,7 @@ Rx stuff outta of it)_
 ### And, What does it lack?
 
 - [ ] currently am working on improving the caching technique to enhance UX
-- [ ] a changelog 
-- [ ] an effective handlation of the bind between the viewController and the viewModel in case of threadings
+- [ ] an effective handlation of the bind between the viewController and the viewModel in case of threadings without using a library
 
 ### Okay, what can this project do?
 
@@ -39,3 +38,10 @@ Rx stuff outta of it)_
   - [X] checking upon creating a movie if the user has entered a title to the movie or not and thus the app would alert the user of that
 - [X] download images and assigning them correctly without images appearing out of place (due to cell reuse)
 - [X] versionings
+- [X] changelog
+
+### Quick Overview about the project's progress so far...
+- you can check the changelog from [here](https://github.com/ARamy23/InstaMovies/blob/master/CHANGELOG.md).
+
+### Want to contribute?
+well first let me thank you very much for contributing to this, I'd encourage u to read the [contribution notes](https://github.com/ARamy23/InstaMovies/blob/master/CONTRIBUTING.md) first then add some awesomeness!
