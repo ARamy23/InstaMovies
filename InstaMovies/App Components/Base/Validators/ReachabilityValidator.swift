@@ -8,7 +8,9 @@
 
 import Foundation
 
-class ToSeeIfIsReachable: BaseValidator {
+typealias ToSeeIfIsReachable = ReachabilityValidator
+
+class ReachabilityValidator: BaseValidator {
     func orThrow() throws {
         guard !Reachability.isConnectedToNetwork() else { return }
         throw ValidationError.unreachable

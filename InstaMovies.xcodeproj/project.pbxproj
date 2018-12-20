@@ -50,7 +50,7 @@
 		E2D7665121C9631F001E8177 /* RoundedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7665021C9631F001E8177 /* RoundedTextView.swift */; };
 		E2D7665421C96ACC001E8177 /* AddNewMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7665221C96ACC001E8177 /* AddNewMovieViewController.swift */; };
 		E2D7665521C96ACC001E8177 /* AddNewMovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D7665321C96ACC001E8177 /* AddNewMovieViewController.xib */; };
-		E2D7665821C97978001E8177 /* isEmptyValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7665721C97978001E8177 /* isEmptyValidator.swift */; };
+		E2D7665821C97978001E8177 /* EmptyValueValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7665721C97978001E8177 /* EmptyValueValidator.swift */; };
 		E2D7665A21C98DDE001E8177 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7665921C98DDE001E8177 /* KeyboardLayoutConstraint.swift */; };
 		E2DE9DFE21CA205A00610E7D /* BaseModuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE9DFD21CA205900610E7D /* BaseModuleTest.swift */; };
 		E2DE9E0221CA44EE00610E7D /* RouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE9E0121CA44EE00610E7D /* RouterMock.swift */; };
@@ -126,7 +126,7 @@
 		E2D7665021C9631F001E8177 /* RoundedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextView.swift; sourceTree = "<group>"; };
 		E2D7665221C96ACC001E8177 /* AddNewMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMovieViewController.swift; sourceTree = "<group>"; };
 		E2D7665321C96ACC001E8177 /* AddNewMovieViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewMovieViewController.xib; sourceTree = "<group>"; };
-		E2D7665721C97978001E8177 /* isEmptyValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isEmptyValidator.swift; sourceTree = "<group>"; };
+		E2D7665721C97978001E8177 /* EmptyValueValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyValueValidator.swift; sourceTree = "<group>"; };
 		E2D7665921C98DDE001E8177 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
 		E2DE9DFD21CA205900610E7D /* BaseModuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModuleTest.swift; sourceTree = "<group>"; };
 		E2DE9E0121CA44EE00610E7D /* RouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMock.swift; sourceTree = "<group>"; };
@@ -440,7 +440,7 @@
 		E2D7665621C9794F001E8177 /* Validators */ = {
 			isa = PBXGroup;
 			children = (
-				E2D7665721C97978001E8177 /* isEmptyValidator.swift */,
+				E2D7665721C97978001E8177 /* EmptyValueValidator.swift */,
 			);
 			path = Validators;
 			sourceTree = "<group>";
@@ -641,7 +641,7 @@
 				E2ADC29A21C6A9B400719490 /* BaseViewController.swift in Sources */,
 				E2ADC28921C6A24200719490 /* DiscoverViewController.swift in Sources */,
 				E2D7665421C96ACC001E8177 /* AddNewMovieViewController.swift in Sources */,
-				E2D7665821C97978001E8177 /* isEmptyValidator.swift in Sources */,
+				E2D7665821C97978001E8177 /* EmptyValueValidator.swift in Sources */,
 				E2D7664921C95DAE001E8177 /* AddNewMovieViewModel.swift in Sources */,
 				E2D7663B21C91D3E001E8177 /* BaseViewModel.swift in Sources */,
 				E2ADC28121C69E5300719490 /* ReusableView.swift in Sources */,
