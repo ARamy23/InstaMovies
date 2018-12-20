@@ -8,8 +8,6 @@
 
 import UIKit
 
-typealias ImageCacheLoaderCompletionHandler = ((UIImage) -> ())
-
 class ImagesManager {
     
     var task: URLSessionDownloadTask!
@@ -22,7 +20,7 @@ class ImagesManager {
         self.cache = NSCache()
     }
     
-    func getImage(from imagePath: String, completionHandler: @escaping ImageCacheLoaderCompletionHandler) {
+    func getImage(from imagePath: String, completionHandler: @escaping (UIImage?) -> ()) {
         if let image = self.cache.object(forKey: imagePath as NSString) {
             DispatchQueue.main.async {
                 completionHandler(image)
@@ -32,7 +30,7 @@ class ImagesManager {
             DispatchQueue.main.async {
                 completionHandler(placeholder)
             }
-            let url = URL(string: imagePath)!
+            let url = URL(string: "https://image.tmdb.org/t/p/original")!.appendingPathComponent(imagePath)
             task = session.downloadTask(with: url, completionHandler: { (location, response, error) in
                 if let data = try? Data(contentsOf: url) {
                     let img: UIImage! = UIImage(data: data)

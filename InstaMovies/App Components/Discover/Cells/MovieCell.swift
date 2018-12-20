@@ -18,16 +18,19 @@ class MovieCell: UITableViewCell {
     
     var movie: Movie? {
         didSet {
-            if movie?.posterPath != nil { posterImageView.downloadImage(from: movie?.posterPath) }
-            else if movie?.image != nil { posterImageView.image = movie?.image }
             movieTitleLabel.text = movie?.title
             movieOverViewLabel.text = movie?.overview
             movieReleaseDateLabel.text = movie?.releaseDate
         }
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        posterImageView.round(withRadiusOf: 16)
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
-        posterImageView.image = #imageLiteral(resourceName: "discover")
+        posterImageView.image = nil
     }
 }

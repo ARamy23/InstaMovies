@@ -77,6 +77,14 @@ extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieCell.reuseIdentifier, for: indexPath) as? MovieCell else { return UITableViewCell() }
         let movie = (indexPath.section == 1) ? discoverViewModel.allMovies.value?[indexPath.row] : addNewMovieViewModel.usersMovies.value?[indexPath.row]
         cell.movie = movie
+        if let userMovieImage = movie?.image {
+            cell.posterImageView.image = userMovieImage
+        } else if let posterPath = movie?.posterPath {
+            ImagesManager().getImage(from: posterPath) { (moviePoster) in
+                guard let cellToUpdate = tableView.cellForRow(at: indexPath) as? MovieCell else { return }
+                cellToUpdate.posterImageView.image = moviePoster
+            }
+        }
         return cell
     }
     
