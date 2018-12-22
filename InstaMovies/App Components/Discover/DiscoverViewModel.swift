@@ -27,7 +27,6 @@ class DiscoverViewModel: BaseViewModel {
                 return
             }
             
-            
             guard let discoveryMoviesResponses = model as? MoviesDiscoveryResponse,
                 let movies = discoveryMoviesResponses.movies else {
                     print("Parsing probably failed")
