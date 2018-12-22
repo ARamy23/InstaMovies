@@ -93,7 +93,7 @@ extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
         }
         // else either get the image from the cache or download it
         else if let posterPath = movie?.posterPath {
-            ImagesManager.getImage(from: posterPath) { (moviePoster) in
+            ImagesManager.shared.getImage(from: posterPath) { (moviePoster) in
                 guard let cellToUpdate = tableView.cellForRow(at: indexPath) as? MovieCell else { return }
                 cellToUpdate.posterImageView.image = moviePoster
             }
