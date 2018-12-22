@@ -37,5 +37,4 @@ class AddNewMovieInteractor: BaseInteractor {
     func save(onComplete: @escaping (CodableInit?, Error?) -> Void) {
         performARequest(onComplete: onComplete)
     }
-    
 }
